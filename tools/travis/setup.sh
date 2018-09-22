@@ -33,7 +33,7 @@ git clone --depth=1 https://github.com/sciabarracom/incubator-openwhisk-runtime-
 cd goproxy
 ./gradlew -x test :build
 cd ..
-ls -l goproxy/actionProxyLoop 
+ls -l goproxy/actionProxyLoop
 
 # clone main openwhisk repo. for testing purposes
 git clone --depth=1 https://github.com/apache/incubator-openwhisk.git openwhisk
