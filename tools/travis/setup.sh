@@ -28,7 +28,15 @@ HOMEDIR="$SCRIPTDIR/../../../"
 cd $HOMEDIR
 git clone https://github.com/apache/incubator-openwhisk-utilities.git
 
+# build the goproxy
+git clone --depth=1 https://github.com/sciabarracom/incubator-openwhisk-runtime-go.git goproxy
+cd goproxy
+./gradlew -x test :build
+cd ..
+ls -l goproxy/actionProxyLoop 
+
 # clone main openwhisk repo. for testing purposes
 git clone --depth=1 https://github.com/apache/incubator-openwhisk.git openwhisk
 cd openwhisk
 ./tools/travis/setup.sh
+
